@@ -1,0 +1,21 @@
+{
+    "indexes": [
+      {
+        "collectionGroup": "users",
+        "queryScope": "COLLECTION",
+        "fields": [
+          { "fieldPath": "level", "order": "ASCENDING" },
+          { "fieldPath": "studyTimes", "arrayConfig": "CONTAINS" }
+        ]
+      },
+      {
+        "collectionGroup": "locations",
+        "queryScope": "COLLECTION",
+        "fields": [
+          { "fieldPath": "level", "order": "ASCENDING" },
+          { "fieldPath": "studyTimes", "arrayConfig": "CONTAINS" }
+        ]
+      }
+    ],
+    "fieldOverrides": []
+  }
