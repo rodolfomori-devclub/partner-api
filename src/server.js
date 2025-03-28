@@ -20,6 +20,18 @@ const PORT = process.env.PORT || 5000;
 // Middlewares
 app.use(helmet()); // Segurança
 app.use(cors()); // Permitir CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://partner.devclub.com.br",
+    ], // Adicione todas as origens do frontend
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(express.json()); // Parsing do body
 app.use(compression()); // Compressão de respostas
 app.use(morgan('dev')); // Logging
